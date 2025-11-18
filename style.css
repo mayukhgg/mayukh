@@ -1,0 +1,28 @@
+* {
+    color: blue;
+}
+
+button {
+    color: rgb(240, 12, 0)
+}
+
+#HeadingOne {
+    color: cyan;
+}
+
+.idc {
+    color: yellow;
+    font-size: large;
+}
+
+#box {
+    color: chartreuse;
+}
+
+#xp {
+    color: #ff9f00;
+}
+
+.idf {
+    color: rgb(234, 134, 34);
+}
