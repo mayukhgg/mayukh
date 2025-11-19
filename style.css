@@ -473,3 +473,16 @@ footer{
         height: 22px; /* small cursor */
     }
 }
+
+/* Bigger about text on PC */
+@media (min-width: 992px) {
+    .home-content p {
+        font-size: 2rem;
+        line-height: 3rem;
+        max-width: 50vw; /* slightly wider */
+    }
+}
+
+.home-content p {
+    letter-spacing: 0.3px;
+}
