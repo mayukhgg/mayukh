@@ -408,3 +408,55 @@ footer{
         width:80vw;
     }
 }
+
+/* ============================
+   CLEAN PRO SKILLS SECTION
+   ============================ */
+
+.skills {
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.skill-box {
+    background: #111;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid #b74b4b;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-box i {
+    font-size: 3.8rem;
+    color: #b74b4b;
+    margin-bottom: 1rem;
+}
+
+.skill-box h3 {
+    font-size: 1.8rem;
+    color: white;
+}
+
+/* Hover */
+.skill-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px #b74b4b;
+    border-color: #ff6b6b;
+}
+
+/* Mobile fix */
+@media (max-width: 450px) {
+    .skill-box {
+        padding: 1.4rem;
+    }
+    .skill-box i {
+        font-size: 3rem;
+    }
+}
