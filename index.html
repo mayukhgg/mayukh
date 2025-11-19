@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Portfolio Website</title>
+    <title>Portfolio - Mayukh</title>
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header>
         <a href="#" class="logo">Mayukh</a>
 
-        <!-- HAMBURGER BUTTON -->
         <div class="menu-btn">
             <i class="fa-solid fa-bars"></i>
         </div>
 
         <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Skills</a>
-            <a href="#">Education</a>
-            <a href="#">Experience</a>
-            <a href="#">Contact</a>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <section class="home">
+    <!-- HOME -->
+    <section id="home" class="home">
         <div class="home-img">
             <img src="https://raw.githubusercontent.com/ritesh-0309/Projects/dd20fca0054b212b5d21f0980164e597dd8230ea/portfolio-websites/Alex%20Portfolio/main.jpg" alt="">
         </div>
@@ -41,29 +42,101 @@
             </h3>
 
             <p>
-                I am a full-stack developer with strong expertise across front-end, back-end, 
-                and modern UI design. I work with a wide range of programming languages, 
-                frameworks, and tools to build high-quality digital experiences — 
-                from sleek portfolio websites to complete web applications.
+                Full-stack developer passionate about building clean, modern, and high-performance websites. 
+                I love frontend design, backend logic, and creating smooth digital experiences.
             </p>
 
             <div class="social-icons">
                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
 
             <a href="#" class="btn">Hire me</a>
         </div>
     </section>
 
-    <!-- ==========================================
-         JAVASCRIPT FOR TYPING EFFECT + MENU
-    =============================================== -->
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2 class="heading">About <span>Me</span></h2>
 
+        <p>
+            I'm a passionate full-stack developer who loves turning ideas into real digital experiences.  
+            I work with both frontend & backend technologies, always learning new tools to improve my craft.  
+            I enjoy modern UI/UX, clean animations, and building fast, responsive websites.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+
+        <div class="skill-box">
+            <p>HTML</p>
+            <div class="bar"><span style="width: 95%"></span></div>
+
+            <p>CSS</p>
+            <div class="bar"><span style="width: 90%"></span></div>
+
+            <p>JavaScript</p>
+            <div class="bar"><span style="width: 80%"></span></div>
+
+            <p>Python</p>
+            <div class="bar"><span style="width: 75%"></span></div>
+
+            <p>Node.js</p>
+            <div class="bar"><span style="width: 70%"></span></div>
+
+            <p>React</p>
+            <div class="bar"><span style="width: 65%"></span></div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="education">
+        <h2 class="heading">My <span>Education</span></h2>
+
+        <div class="edu-box">
+            <h3>North Point English Academy</h3>
+            <p>Grade: 7th</p>
+            <p>Year: 2025–26</p>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="experience">
+        <h2 class="heading">My <span>Experience</span></h2>
+
+        <div class="exp-box">
+            <h3>Full Stack Developer</h3>
+            <p>
+                Built multiple websites using HTML, CSS, JS, Node.js, and modern UI frameworks.  
+                Experienced in responsive design, animations, and backend logic.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <div class="contact-links">
+            <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i> Email</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Mayukh | All Rights Reserved</p>
+    </footer>
+
+    <!-- JS FOR TYPING + MENU -->
     <script>
-        /* ------ TYPING ANIMATION ------ */
+        /* ------ TYPING ------ */
         const words = [
             "Web Developer",
             "Developer",
@@ -72,49 +145,40 @@
             "Student"
         ];
 
-        let wordIndex = 0;
-        let charIndex = 0;
-        let currentWord = "";
-        let isDeleting = false;
-
-        const typingSpan = document.querySelector(".typing-text span");
+        let index = 0, char = 0, del = false;
+        const span = document.querySelector(".typing-text span");
 
         function type() {
-            currentWord = words[wordIndex];
+            let word = words[index];
 
-            if (!isDeleting) {
-                typingSpan.textContent = currentWord.substring(0, charIndex++);
+            if (!del) {
+                span.textContent = word.substring(0, char++);
             } else {
-                typingSpan.textContent = currentWord.substring(0, charIndex--);
+                span.textContent = word.substring(0, char--);
             }
 
-            if (!isDeleting && charIndex === currentWord.length) {
-                setTimeout(() => isDeleting = true, 800);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
+            if (char === word.length) del = true;
+            if (char === 0 && del) {
+                del = false;
+                index = (index + 1) % words.length;
             }
 
-            setTimeout(type, isDeleting ? 80 : 120);
+            setTimeout(type, del ? 60 : 120);
         }
-
         type();
 
-
-        /* ------ HAMBURGER MENU ------ */
-        const menuBtn = document.querySelector('.menu-btn');
-        const nav = document.querySelector('nav');
+        /* ------ MENU ------ */
+        const btn = document.querySelector(".menu-btn");
+        const nav = document.querySelector("nav");
         let open = false;
 
-        menuBtn.addEventListener('click', () => {
+        btn.onclick = () => {
             nav.classList.toggle("show");
-
-            menuBtn.innerHTML = open
+            btn.innerHTML = open
                 ? '<i class="fa-solid fa-bars"></i>'
                 : '<i class="fa-solid fa-xmark"></i>';
-
             open = !open;
-        });
+        }
     </script>
 
 </body>
