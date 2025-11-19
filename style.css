@@ -8,12 +8,12 @@
     text-decoration: none;
     border: none;
     outline: none;
-    scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
 
 html{
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -23,16 +23,17 @@ body{
     overflow-x: hidden;
 }
 
-/* ==============================
-   HEADER
-============================== */
+/* ============================
+   HEADER + NAVBAR
+   ============================ */
+
 header{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 1.5rem 9%;
-    background-color: #000;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +55,8 @@ header{
 nav a{
     font-size: 1.8rem;
     color: white;
-    margin-left: 4rem;
+    margin-left: 3rem;
+    font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
 }
@@ -65,7 +67,6 @@ nav a.active{
     border-bottom: 3px solid #b74b4b;
 }
 
-/* HAMBURGER BUTTON */
 .menu-btn{
     display: none;
     font-size: 3.4rem;
@@ -74,33 +75,25 @@ nav a.active{
     z-index: 300;
 }
 
-/* ==============================
-   GLOBAL SECTION STYLING
-============================== */
+/* ============================
+   SECTIONS
+   ============================ */
+
 section{
-    padding: 7rem 9% 3rem;
+    padding: 8rem 9% 4rem;
 }
 
-.heading{
-    font-size: 4.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    font-weight: 700;
-}
+/* ============================
+   HOME SECTION
+   ============================ */
 
-.heading span{
-    color: #b74b4b;
-}
-
-/* ==============================
-   HOME
-============================== */
 .home{
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8rem;
+    padding-top: 10rem;
 }
 
 .home-img img{
@@ -118,6 +111,7 @@ section{
 .home-content h1{
     font-size: 6rem;
     font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .home-content h3{
@@ -125,9 +119,13 @@ section{
     font-weight: 700;
 }
 
+span{
+    color: #b74b4b;
+}
+
 .home-content p{
     font-size: 1.6rem;
-    margin-top: 2rem;
+    margin: 2rem 0;
     line-height: 2.5rem;
     max-width: 45vw;
 }
@@ -139,18 +137,19 @@ section{
     align-items: center;
     width: 4rem;
     height: 4rem;
+    background: transparent;
     border: 2px solid #b74b4b;
     color: #b74b4b;
     font-size: 2rem;
     border-radius: 50%;
-    margin: 1.5rem 1rem;
+    margin: 1.5rem 1rem 2rem 0;
     transition: 0.3s ease;
 }
 
 .social-icons a:hover{
     background: #b74b4b;
     color: black;
-    transform: scale(1.2);
+    transform: scale(1.2) translateY(-5px);
     box-shadow: 0 0 20px #b74b4b;
 }
 
@@ -158,12 +157,12 @@ section{
 .btn{
     display: inline-block;
     padding: 1.2rem 3rem;
+    font-size: 1.7rem;
     border-radius: 4rem;
     border: 2px solid #b74b4b;
     color: #b74b4b;
     background: black;
     cursor: pointer;
-    font-size: 1.7rem;
     transition: 0.3s ease;
 }
 
@@ -174,9 +173,10 @@ section{
     box-shadow: 0 0 25px #b74b4b;
 }
 
-/* ==============================
-   TYPING TEXT (JS)
-============================== */
+/* ============================
+   TYPING EFFECT
+   ============================ */
+
 .typing-text{
     display: flex;
     align-items: center;
@@ -203,34 +203,50 @@ section{
     51%, 100% { opacity: 0; }
 }
 
-/* ==============================
-   ABOUT
-============================== */
+/* ============================
+   ABOUT ME
+   ============================ */
+
+.about{
+    text-align: center;
+}
+
+.heading{
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+
 .about p{
     font-size: 1.8rem;
-    width: 80%;
+    max-width: 800px;
     margin: auto;
-    text-align: center;
     line-height: 2.8rem;
 }
 
-/* ==============================
+/* ============================
    SKILLS
-============================== */
-.skills .skill-bar{
-    margin: 2rem 0;
+   ============================ */
+
+.skills{
+    text-align: center;
+}
+
+.skill-bar{
+    margin: 2rem auto;
+    max-width: 600px;
 }
 
 .skill-bar p{
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
 }
 
 .progress{
     width: 100%;
-    height: 1rem;
-    background: #222;
-    border-radius: 1rem;
+    height: 12px;
+    background: #333;
+    border-radius: 8px;
     overflow: hidden;
 }
 
@@ -238,60 +254,86 @@ section{
     display: block;
     height: 100%;
     background: #b74b4b;
-    border-radius: 1rem;
+    border-radius: 8px;
+    animation: grow 1.8s ease forwards;
 }
 
-/* ==============================
-   EDUCATION + EXPERIENCE
-============================== */
-.edu-box, .exp-box{
-    background: #111;
-    border-left: 4px solid #b74b4b;
-    padding: 2rem;
-    margin: 2rem auto;
-    width: 80%;
-    border-radius: 1rem;
+@keyframes grow {
+    from { width: 0; }
+    to { width: inherit; }
 }
 
-.edu-box h3, .exp-box h3{
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
+/* ============================
+   EDUCATION
+   ============================ */
 
-.edu-box p, .exp-box p{
-    font-size: 1.7rem;
-    line-height: 2.6rem;
-}
-
-/* ==============================
-   CONTACT 
-============================== */
-.contact-info p{
-    font-size: 1.7rem;
-    margin: 1rem 0;
+.education{
     text-align: center;
 }
 
-.contact-info i{
-    color: #b74b4b;
-    margin-right: 1rem;
+.edu-box{
+    margin: auto;
+    max-width: 600px;
+    background: #111;
+    padding: 2rem;
+    border-left: 4px solid #b74b4b;
+    border-radius: 8px;
 }
 
-/* ==============================
+.edu-box h3{
+    font-size: 2.5rem;
+}
+
+/* ============================
+   EXPERIENCE
+   ============================ */
+
+.experience{
+    text-align: center;
+}
+
+.exp-box{
+    margin: auto;
+    max-width: 700px;
+    background: #111;
+    padding: 2rem;
+    border-left: 4px solid #b74b4b;
+    border-radius: 8px;
+}
+
+.exp-box h3{
+    font-size: 2.8rem;
+}
+
+/* ============================
+   CONTACT
+   ============================ */
+
+.contact{
+    text-align: center;
+}
+
+.contact-info p{
+    font-size: 1.8rem;
+    margin: 1rem;
+}
+
+/* ============================
    FOOTER
-============================== */
+   ============================ */
+
 footer{
     text-align: center;
     padding: 2rem;
+    background: #111;
+    color: #aaa;
     font-size: 1.4rem;
-    background: #000;
-    margin-top: 3rem;
-    border-top: 2px solid #b74b4b;
 }
 
-/* ==============================
-   MOBILE RESPONSIVE
-============================== */
+/* ============================
+   MOBILE VIEW 
+   ============================ */
+
 @media (max-width: 995px){
 
     .menu-btn{
@@ -335,6 +377,7 @@ footer{
 
     .home-img img{
         width: 70vw;
+        margin-top: 2rem;
     }
 
     .home-content p{
@@ -344,10 +387,12 @@ footer{
 
     .typing-text{
         justify-content: center;
+        font-size: 2.6rem;
     }
 }
 
 @media (max-width: 430px){
+
     .home-content h1{
         font-size: 4rem;
     }
