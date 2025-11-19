@@ -284,3 +284,12 @@ footer{
     padding: 2rem 0;
     opacity: 0.8;
 }
+
+/* FIX HOME TEXT WIDTH & SIZE ON PC */
+@media (min-width: 992px){
+    .home-content p{
+        font-size: 2.1rem;
+        line-height: 3.2rem;
+        max-width: 60vw; /* previously 50vw — this makes text wider */
+    }
+}
