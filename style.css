@@ -166,7 +166,7 @@ span{
     color: black;
     transform: scale(1.3) translateY(-5px);
     background-color: #b74b4b;
-    box-shadow: 0 0 25px #b74b4b;
+    box-shadow: 0  0 25px #b74b4b;
 }
 
 .btn{
@@ -190,6 +190,8 @@ span{
     box-shadow: 0 0 25px #b74b4b;
 }
 
+/* ---------- TYPING EFFECT FIXED ---------- */
+
 .typing-text{
     font-size: 34px;
     font-weight: 600;
@@ -200,29 +202,25 @@ span{
     position: relative;
 }
 
-/* FIXED — capitalized + clean */
 .typing-text span::before{
     content: "Software Developer";
     color: #b74b4b;
     animation: words 20s infinite;
 }
 
-/* FIXED — visible cursor */
 .typing-text span::after{
     content: "";
-    background-color: black;
     position: absolute;
-    width: calc(100% + 8px);
     height: 100%;
-    border-left: 3px solid #b74b4b;
-    right: -8px;
-    animation: cursor 0.6s infinite;
+    width: 2px;
+    background-color: #b74b4b;
+    right: -5px;
+    animation: cursorBlink 0.7s infinite;
 }
 
-@keyframes cursor{
-    to{
-        border-left: 3px solid black;
-    }
+@keyframes cursorBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 
 @keyframes words{
@@ -242,6 +240,8 @@ span{
         content: "Student";
     }
 }
+
+/* ---------- RESPONSIVE FIXES ---------- */
 
 @media (max-width: 1000px){
     .home{
