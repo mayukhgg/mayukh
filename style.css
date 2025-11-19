@@ -169,7 +169,7 @@ span{
 }
 
 /* ============================
-   TYPING EFFECT (JS VERSION)
+   TYPING EFFECT (JS ONLY)
    ============================ */
 
 .typing-text{
@@ -184,6 +184,7 @@ span{
     margin-left: 6px;
 }
 
+/* blinking cursor */
 .typing-text::after{
     content: "";
     width: 3px;
@@ -280,3 +281,4 @@ span{
         width: 80vw;
     }
 }
+
