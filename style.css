@@ -460,3 +460,16 @@ footer{
         font-size: 3rem;
     }
 }
+
+/* FIX typing text breaking on mobile */
+@media (max-width: 480px) {
+    .typing-text {
+        font-size: 2rem; /* smaller */
+    }
+    .typing-text span {
+        font-size: 2rem;
+    }
+    .typing-text::after {
+        height: 22px; /* small cursor */
+    }
+}
