@@ -163,13 +163,14 @@ section {
 /* ========================= ABOUT SECTION FIXED ========================= */
 
 .about p {
-    max-width: 750px;
+    max-width: 780px;
     margin: auto;
     text-align: center;
-    line-height: 1.75;
-    font-size: 17px;
-    opacity: .85;
+    line-height: 1.8;
+    font-size: 19px;      /* increased */
+    opacity: .9;          /* slightly brighter */
 }
+
 
 /* ========================= SKILLS ========================= */
 
@@ -285,3 +286,4 @@ footer {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
