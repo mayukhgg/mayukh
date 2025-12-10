@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -13,7 +12,6 @@ body {
     color: #fff;
 }
 
-/* HEADER */
 header {
     position: fixed;
     top: 0;
@@ -22,9 +20,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
     background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(8px);
 }
 
 .logo {
@@ -34,33 +30,28 @@ header {
 }
 
 nav a {
-    margin-left: 35px;
-    font-size: 16px;
+    margin-left: 25px;
     color: #fff;
-    transition: .3s;
+    text-decoration: none;
 }
 
-/* SECTIONS */
 section {
     padding: 120px 10% 60px;
 }
 
-.home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    padding-top: 150px;
-}
-
-/* SKILLS GRID */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-/* ================= CONTACT FORM ================= */
+.skill-box {
+    padding: 20px;
+    border: 1px solid #d24e4e;
+    text-align: center;
+}
+
+/* CONTACT FORM */
 
 .contact-form {
     max-width: 500px;
@@ -74,22 +65,18 @@ section {
 .contact-form textarea {
     padding: 12px;
     border-radius: 8px;
-    border: none;
-    outline: none;
     background: #111;
-    color: #fff;
     border: 1px solid #d24e4e;
-    font-size: 15px;
+    color: white;
 }
 
 .contact-form textarea {
-    resize: none;
     height: 120px;
+    resize: none;
 }
 
 #statusMsg {
     text-align: center;
     margin-top: 10px;
     color: #d24e4e;
-    font-weight: 600;
 }
