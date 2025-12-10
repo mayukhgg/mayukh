@@ -2,215 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
     <title>Portfolio - Mayukh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <a href="#" class="logo">Mayukh</a>
+<header>
+    <a href="#" class="logo">Mayukh</a>
 
-        <!-- HAMBURGER MENU -->
-        <div class="menu-btn">
-            <i class="fa-solid fa-bars"></i>
+    <div class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- ================= HOME ================= -->
+
+<section class="home" id="home">
+    <div class="home-img">
+        <img src="https://raw.githubusercontent.com/ritesh-0309/Projects/dd20fca0054b212b5d21f0980164e597dd8230ea/portfolio-websites/Alex%20Portfolio/main.jpg">
+    </div>
+
+    <div class="home-content">
+        <h1>Hi, It's <span>Mayukh</span></h1>
+        <h3 class="typing-text">I'm a <span></span></h3>
+
+        <p>I am a full-stack developer with strong expertise across front-end, back-end, and UI design.</p>
+
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
         </div>
 
-        <nav>
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+        <a href="#contact" class="btn">Hire me</a>
+    </div>
+</section>
 
-    <!-- ================= Home ================= -->
+<!-- ================= ABOUT ================= -->
 
-    <section class="home" id="home">
-        <div class="home-img">
-            <img src="https://raw.githubusercontent.com/ritesh-0309/Projects/dd20fca0054b212b5d21f0980164e597dd8230ea/portfolio-websites/Alex%20Portfolio/main.jpg" alt="">
-        </div>
+<section id="about" class="about">
+    <h2 class="heading">About <span>Me</span></h2>
+    <p>I’m a passionate full-stack developer who loves building clean, modern websites.</p>
+</section>
 
-        <div class="home-content">
-            <h1>Hi, It's <span>Mayukh</span></h1>
+<!-- ================= SKILLS ================= -->
 
-            <h3 class="typing-text">I'm a <span></span></h3>
+<section id="skills" class="skills">
+    <h2 class="heading">My <span>Skills</span></h2>
 
-            <p>
-                I am a full-stack developer with strong expertise across front-end,
-                back-end, and UI design. I build modern, fast, and visually clean
-                digital experiences using the latest web technologies.
-            </p>
+    <div class="skills-grid">
+        <div class="skill-box"><i class="fa-brands fa-html5"></i><h3>HTML</h3></div>
+        <div class="skill-box"><i class="fa-brands fa-css3-alt"></i><h3>CSS</h3></div>
+        <div class="skill-box"><i class="fa-brands fa-js"></i><h3>JavaScript</h3></div>
+        <div class="skill-box"><i class="fa-brands fa-react"></i><h3>React</h3></div>
+        <div class="skill-box"><i class="fa-brands fa-node"></i><h3>Node.js</h3></div>
+        <div class="skill-box"><i class="fa-solid fa-database"></i><h3>MongoDB</h3></div>
+    </div>
+</section>
 
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </div>
+<!-- ================= EDUCATION ================= -->
 
-            <a href="#" class="btn">Hire me</a>
-        </div>
-    </section>
+<section id="education" class="education">
+    <h2 class="heading">My <span>Education</span></h2>
 
-    <!-- ================= About ================= -->
+    <div class="edu-box">
+        <h3>North Point English Academy</h3>
+        <p>Grade: 7th</p>
+        <p>Year: 2025 - 2026</p>
+    </div>
+</section>
 
-    <section id="about" class="about">
-        <h2 class="heading">About <span>Me</span></h2>
+<!-- ================= EXPERIENCE ================= -->
 
-        <p>
-            I’m a passionate full-stack developer who loves building clean, modern,
-            and high-performance websites. From frontend design to backend logic, I bring ideas 
-            to life with smooth UI, fast performance, and clean code. I constantly learn new 
-            technologies and improve my skills to create better digital experiences every day.
-        </p>
-    </section>
+<section id="experience" class="experience">
+    <h2 class="heading">My <span>Experience</span></h2>
 
-    <!-- ================= Skills (Clean Cards) ================= -->
+    <div class="exp-box">
+        <h3>Full Stack Developer</h3>
+        <p>Built modern websites with front-end and backend logic.</p>
+    </div>
+</section>
 
-    <section id="skills" class="skills">
-        <h2 class="heading">My <span>Skills</span></h2>
+<!-- ================= CONTACT (CONNECTED TO BACKEND) ================= -->
 
-        <div class="skills-grid">
+<section id="contact" class="contact">
+    <h2 class="heading">Contact <span>Me</span></h2>
 
-            <div class="skill-box">
-                <i class="fa-brands fa-html5"></i>
-                <h3>HTML</h3>
-            </div>
+    <form id="contactForm" class="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
 
-            <div class="skill-box">
-                <i class="fa-brands fa-css3-alt"></i>
-                <h3>CSS</h3>
-            </div>
+        <button type="submit" class="btn">Send Message</button>
+        <p id="statusMsg"></p>
+    </form>
+</section>
 
-            <div class="skill-box">
-                <i class="fa-brands fa-js"></i>
-                <h3>JavaScript</h3>
-            </div>
+<footer>
+    <p>© 2025 Mayukh — All Rights Reserved</p>
+</footer>
 
-            <div class="skill-box">
-                <i class="fa-brands fa-react"></i>
-                <h3>React</h3>
-            </div>
-
-            <div class="skill-box">
-                <i class="fa-brands fa-node"></i>
-                <h3>Node.js</h3>
-            </div>
-
-            <div class="skill-box">
-                <i class="fa-solid fa-database"></i>
-                <h3>MongoDB</h3>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ================= Education ================= -->
-
-    <section id="education" class="education">
-        <h2 class="heading">My <span>Education</span></h2>
-
-        <div class="edu-box">
-            <h3>North Point English Academy</h3>
-            <p>Grade: 7th</p>
-            <p>Year: 2025 - 2026</p>
-        </div>
-    </section>
-
-    <!-- ================= Experience ================= -->
-
-    <section id="experience" class="experience">
-        <h2 class="heading">My <span>Experience</span></h2>
-
-        <div class="exp-box">
-            <h3>Full Stack Developer</h3>
-            <p>
-                Built and designed modern web interfaces, backend systems, and responsive UI components.
-                Experienced in smooth animations, clean layouts, and high-performance websites.
-            </p>
-        </div>
-    </section>
-
-    <!-- ================= Contact ================= -->
-
-    <section id="contact" class="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
-
-        <div class="contact-info">
-            <p><i class="fa-solid fa-envelope"></i> jhamayukh2025@gmail.com</p>
-            <p><i class="fa-brands fa-instagram"></i> zyntrixff</p>
-            <p><i class="fa-brands fa-github"></i> idk</p>
-            <p><i class="fa-brands fa-linkedin"></i> i dont have</p>
-        </div>
-    </section>
-
-    <!-- ================= Footer ================= -->
-
-    <footer>
-        <p>© 2025 Mayukh — All Rights Reserved</p>
-    </footer>
-
-    <!-- ================= JAVASCRIPT ================= -->
-
-    <script>
-        /* ------ TYPING ANIMATION ------ */
-        const words = [
-            "Web Developer",
-            "Full Stack Developer",
-            "Web Designer",
-            "Programmer",
-            "Student"
-        ];
-
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        const typingSpan = document.querySelector(".typing-text span");
-
-        function type() {
-            const currentWord = words[wordIndex];
-
-            if (!isDeleting) {
-                typingSpan.textContent = currentWord.substring(0, charIndex++);
-            } else {
-                typingSpan.textContent = currentWord.substring(0, charIndex--);
-            }
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                setTimeout(() => isDeleting = true, 800);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-            }
-
-            setTimeout(type, isDeleting ? 80 : 120);
-        }
-
-        type();
-
-        /* ------ HAMBURGER MENU ------ */
-        const menuBtn = document.querySelector('.menu-btn');
-        const nav = document.querySelector('nav');
-        let menuOpen = false;
-
-        menuBtn.addEventListener('click', () => {
-            nav.classList.toggle("show");
-            menuBtn.innerHTML = menuOpen 
-                ? '<i class="fa-solid fa-bars"></i>'
-                : '<i class="fa-solid fa-xmark"></i>';
-            menuOpen = !menuOpen;
-        });
-    </script>
+<!-- ================= JAVASCRIPT ================= -->
+<script src="script.js"></script>
 
 </body>
 </html>
-
-
-
