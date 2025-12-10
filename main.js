@@ -1,54 +1,86 @@
-/* === TYPING EFFECT === */
-const words = ["Web Developer", "Full Stack Developer", "Programmer", "Student"];
-let wordIndex = 0, charIndex = 0, isDeleting = false;
+/* ---------- TYPING ANIMATION ---------- */
+const words = [
+  "Web Developer",
+  "Full Stack Developer",
+  "Programmer",
+  "Student"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
 const typingSpan = document.querySelector(".typing-text span");
 
 function type() {
-  const current = words[wordIndex];
-  typingSpan.textContent = isDeleting
-    ? current.substring(0, --charIndex)
-    : current.substring(0, ++charIndex);
+  const currentWord = words[wordIndex];
 
-  if (!isDeleting && charIndex === current.length) isDeleting = true;
-  if (isDeleting && charIndex === 0) {
+  if (!isDeleting) {
+    typingSpan.textContent = currentWord.substring(0, charIndex++);
+  } else {
+    typingSpan.textContent = currentWord.substring(0, charIndex--);
+  }
+
+  if (!isDeleting && charIndex === currentWord.length) {
+    setTimeout(() => isDeleting = true, 800);
+  } 
+  else if (isDeleting && charIndex === 0) {
     isDeleting = false;
     wordIndex = (wordIndex + 1) % words.length;
   }
 
   setTimeout(type, isDeleting ? 80 : 120);
 }
+
 type();
 
-/* === CONTACT FORM BACKEND === */
 
-const form = document.getElementById("contactForm");
-const statusMsg = document.getElementById("statusMsg");
+/* ---------- HAMBURGER MENU ---------- */
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.querySelector('nav');
+let menuOpen = false;
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const data = {
-    name: name.value,
-    email: email.value,
-    message: message.value
-  };
-
-  try {
-    const res = await fetch("http://localhost:3000/contact", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(data)
-    });
-
-    const result = await res.json();
-
-    if (result.success) {
-      statusMsg.textContent = "✅ Message Sent!";
-      form.reset();
-    } else {
-      statusMsg.textContent = "❌ Failed!";
-    }
-  } catch {
-    statusMsg.textContent = "❌ Backend not running!";
-  }
+menuBtn.addEventListener('click', () => {
+  nav.classList.toggle("show");
+  menuBtn.innerHTML = menuOpen 
+    ? '<i class="fa-solid fa-bars"></i>'
+    : '<i class="fa-solid fa-xmark"></i>';
+  menuOpen = !menuOpen;
 });
+
+
+/* ---------- ✅ CONTACT FORM BACKEND CONNECTION ---------- */
+const form = document.querySelector("form");
+
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = form.querySelector("input[placeholder='Your Name']").value;
+    const email = form.querySelector("input[placeholder='Your Email']").value;
+    const message = form.querySelector("textarea").value;
+
+    try {
+      const res = await fetch("https://mayukh-backend.onrender.com/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("✅ Message sent successfully!");
+        form.reset();
+      } else {
+        alert("❌ Failed to send message.");
+      }
+
+    } catch (err) {
+      alert("❌ Server error. Try again later.");
+      console.error(err);
+    }
+  });
+}
